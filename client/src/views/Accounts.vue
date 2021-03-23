@@ -31,7 +31,7 @@ export default {
       }
   },
   created () {
-    axios.get('http://localhost:8080/api/v1/account')
+    axios.get(`${process.env.VUE_APP_API_URL}/account`)
     .then((resp) => {
         this.accounts = resp.data;
     }).catch((err) => {

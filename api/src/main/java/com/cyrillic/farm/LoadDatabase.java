@@ -42,24 +42,24 @@ class LoadDatabase {
 
         return args -> {
             
-            // User user1 = userRepository.save(new User("user1@cyrillic.com", passwordEncoder.encode("secret")));
-            // User user2 = userRepository.save(new User("user2@cyrillic.com", passwordEncoder.encode("secret")));
+            User user1 = userRepository.save(new User("user1@cyrillic.com", passwordEncoder.encode("secret")));
+            User user2 = userRepository.save(new User("user2@cyrillic.com", passwordEncoder.encode("secret")));
 
-            // Farm farm1 = farmRepository.save(new Farm("Farm 1"));
-            // Farm farm2 = farmRepository.save(new Farm("Farm 2"));
+            Farm farm1 = farmRepository.save(new Farm("Farm 1"));
+            Farm farm2 = farmRepository.save(new Farm("Farm 2"));
 
-            // Customer customer1 = customerRepository.save(new Customer("Customer", "One"));
-            // Customer customer2 = customerRepository.save(new Customer("Customer", "Two"));
+            Customer customer1 = customerRepository.save(new Customer("Customer", "One"));
+            Customer customer2 = customerRepository.save(new Customer("Customer", "Two"));
 
-            // Account account1 = accountRepository.save(new Account(customer1, farm1));
-            // Account account2 = accountRepository.save(new Account(customer2, farm2));
+            Account account1 = accountRepository.save(new Account(customer1, farm1));
+            Account account2 = accountRepository.save(new Account(customer2, farm2));
 
-            // // relations
-            // user1.setAccounts(Set.of(account1, account2));
-            // userRepository.save(user1);
+            // relations
+            user1.setAccounts(Set.of(account1, account2));
+            userRepository.save(user1);
 
-            // user2.setAccounts(Set.of(account2));
-            // userRepository.save(user2);
+            user2.setAccounts(Set.of(account2));
+            userRepository.save(user2);
         };
     }
 }

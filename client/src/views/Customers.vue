@@ -29,7 +29,7 @@ export default {
       }
   },
   created () {
-    axios.get('http://localhost:8080/api/v1/customer')
+    axios.get(`${process.env.VUE_APP_API_URL}/customer`)
     .then((resp) => {
         this.customers = resp.data;
     });

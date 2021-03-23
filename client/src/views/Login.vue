@@ -63,7 +63,7 @@ export default {
             this.$refs[formName].validate((valid) => {
                 if (valid) {
 
-                    axios.post('http://localhost:8080/api/v1/auth/login', { username: this.loginForm.email, password: this.loginForm.password })
+                    axios.post(`${process.env.VUE_APP_API_URL}/auth/login`, { username: this.loginForm.email, password: this.loginForm.password })
                     .then((resp) => {
                         let token = resp.data.token;
                         axios.defaults.headers.common = {'Authorization': `Bearer ${token}`}

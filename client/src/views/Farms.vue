@@ -29,7 +29,7 @@ export default {
       }
   },
   created () {
-    axios.get('http://localhost:8080/api/v1/farm')
+    axios.get(`${process.env.VUE_APP_API_URL}/farm`)
     .then((resp) => {
         this.farms = resp.data;
     }).catch((err) => {
